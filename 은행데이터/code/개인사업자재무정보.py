@@ -5,7 +5,7 @@ import time
 # 시작 시간 기록
 start_time = time.time()
 
-total_page = 100
+total_page = 1
 
 base_url = 'https://apis.data.go.kr/1160100/service/GetSBFinanceInfoService/getFnafInfo?serviceKey=YeAuEKy2TOoVsF8mQ72JLW0%2FRj17Xa8JeFqJGO6DZoTiCVsbNGeGJY6oyqi8ZfwEJWWxDpM37pbe22VMFtE5wg%3D%3D&resultType=json'
 
@@ -19,6 +19,7 @@ for page in range(1, total_page + 1):
         data = res.json()
         items = data["response"]["body"]["items"]["item"]
         all_data.extend(items)
+        print(data)
 
 
     else:
@@ -28,9 +29,7 @@ for page in range(1, total_page + 1):
 columns = all_data[0].keys() 
 df = pd.DataFrame(all_data)
 #df.columns = ['OFFER_DATE', 'GENDER', 'AGE_GROUP', 'ESTABLISHED_YEAR', 'REGION', 'INDUSTRY_CD', 'INDUSTRY_NM', 'EMPLOYEE_NUM']
-df.to_csv('csv/개인사업자재무정보.csv',index=False, encoding="utf-8-sig")
-
-
+df.to_csv('은행데이터/csv/개인사업자재무정보.csv',index=False, encoding="utf-8-sig")
 
 # 시간 체크
 end_time = time.time()
