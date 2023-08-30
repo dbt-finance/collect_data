@@ -5,13 +5,15 @@ import time
 # 시작 시간 기록
 start_time = time.time()
 
-total_page = 100
+total_page = 1
 
-base_url = 'http://openapi.fsc.go.kr/service/GetSBProfileInfoService/getCsdoStatus?serviceKey=YeAuEKy2TOoVsF8mQ72JLW0%2FRj17Xa8JeFqJGO6DZoTiCVsbNGeGJY6oyqi8ZfwEJWWxDpM37pbe22VMFtE5wg%3D%3D&resultType=json'
 
 all_data = []
+base_url = 'http://openapi.fsc.go.kr/service/GetSBProfileInfoService/getOtlInfo?serviceKey=YeAuEKy2TOoVsF8mQ72JLW0%2FRj17Xa8JeFqJGO6DZoTiCVsbNGeGJY6oyqi8ZfwEJWWxDpM37pbe22VMFtE5wg%3D%3D&resultType=json&numOfRows=9999'
 
-for page in range(1, total_page + 1):
+
+
+for page in range(1, 42):
     url = f"{base_url}&pageNo={page}"
     res = requests.get(url)
 
@@ -21,15 +23,14 @@ for page in range(1, total_page + 1):
         all_data.extend(items)
         print(data)
 
-
     else:
         print(f"페이지 {page} 데이터를 가져오는데 실패했습니다.")
 
 # DataFrame으로 변환
-columns = all_data[0].keys() 
+# columns = all_data[0].keys() 
 df = pd.DataFrame(all_data)
-#df.columns = ['OFFER_DATE', 'GENDER', 'AGE_GROUP', 'ESTABLISHED_YEAR', 'REGION', 'INDUSTRY_CD', 'INDUSTRY_NM', 'EMPLOYEE_NUM']
-df.to_csv('csv/개인사업자휴폐업정보.csv',index=False, encoding="utf-8-sig")
+df.columns = ['OFFER_DATE', 'GENDER', 'AGE_GROUP', 'ESTABLISHED_YEAR', 'REGION', 'INDUSTRY_CD', 'INDUSTRY_NM', 'EMPLOYEE_NUM']
+df.to_csv('은행데이터/csv/개인사업자기본정보.csv',index=False, encoding="utf-8-sig")
 
 
 
