@@ -1,0 +1,35 @@
+{
+    "urls":[
+        {
+            "base_url": "/GetStocIssuInfoService",
+            "topic": "주식발행정보",
+            "api_list":[
+                "/getItemBasiInfo",
+                "/getStocIssuInfo",
+                "/getStocIssuStat"
+            ]
+        },
+        {
+            "base_url": "/GetStocDepoInfoService",
+            "topic": "주식등록예탁가능정보",
+            "api_list":[
+                "/getDepoAvaiWhet"
+            ]
+        },
+        {
+            "base_url": "/GetStocDiviInfoService",
+            "topic": "주식배당정보",
+            "api_list":[
+                "/getDiviInfo"
+            ]
+        },
+        {
+            "base_url": "/GetStocRighScheService",
+            "topic": "주식권리일정정보",
+            "api_list":[
+                "/getRighExerReasSche"
+            ]
+        }
+    ]
+
+}
