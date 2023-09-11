@@ -1,6 +1,5 @@
 # 프로젝트 소개
 
----
 
 ## 금융 데이터 수집을 통한 데이터 분석 환경 구축
 
@@ -13,8 +12,8 @@
 | - 배치 파이프라인<br/>- 금융위원회| - 실시간 파이프라인<br/>- 암호화폐 | - 실시간 및 배치 파이프라인<br/>- 주식 | - 배치 파이프라인<br/> - 한국부동산원<br/> - 데이터 시각화 | - 배치 파이프라인<br/>- 한국은행<br/>- AWS 인프라 |
 
 ## 사용 데이터
-![data_source.png](assets%2Fdata_source.png)
 
+![data_source.png](assets%2Fdata_source.png)
 ## Main Tech Stack
 | Role          | Stack                                                                                                                                                                                                                                                                                                        |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,8 +22,7 @@
 | DataMart      | <img src="https://img.shields.io/badge/AWS Redshift-527FFF?style=flat&logo=amazonredshift&logoColor=white"/>                                                                                                                                                                                                 |
 | ETL           | <img src="https://img.shields.io/badge/EMR Spark-E25A1C?style=flat&logo=apache spark&logoColor=white"/><img src="https://img.shields.io/badge/Lambda-FF9900?style=flat&logo=Awslambda&logoColor=white"/> <img src="https://img.shields.io/badge/AWS Glue-232F3E?style=flat&logo=amazonAWS&logoColor=white"/> | 
 | ETL Scheduler | <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat&logo=Apacheairflow&logoColor=white"/>                                                                                                                                                                                                       |
-| Streaming | <img src="https://img.shields.io/badge/Kafka-23F20?style=flat&logo=Apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white"/> <img src="https://img.shields.io/badge/AWS RDS-527FFF?style=flat&logo=Amazon RDS&logoColor=white"/>       |                                                                                                
---- 
+| Streaming | <img src="https://img.shields.io/badge/Kafka-23F20?style=flat&logo=Apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white"/> <img src="https://img.shields.io/badge/AWS RDS-527FFF?style=flat&logo=Amazon RDS&logoColor=white"/>       |
 
 ## 배치 처리 아키텍쳐
 ![batch](https://github.com/dbt-finance/collect_data/assets/98998726/75533891-a8e7-440c-a917-caf60ca4a34b)
@@ -36,12 +34,11 @@
 
 ## 데이터 시각화 - AWS QuickSight
 ### [ 경제 지표 데이터 ] 
-![img_1.png](assets%2Fimg_1.png)
+![eco_indicator.png](assets%2Feco_indicator.png)
 ---
 ### [ 부동산 데이터 ]
-![img.png](assets%2Fimg.png)
+![real_estate.png](assets%2Freal_estate.png)
 
----
 ## 실시간 처리 아키텍쳐
 ![realtime](https://github.com/dbt-finance/collect_data/assets/98998726/57386470-0809-4a9e-8106-96ecdbb4cb44)
 
