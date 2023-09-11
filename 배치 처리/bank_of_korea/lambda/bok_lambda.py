@@ -7,7 +7,6 @@ import json
 import logging
 import time
 
-
 def lambda_handler(event, context):
     # get_info
     s3_bucket = event['s3_bucket']
