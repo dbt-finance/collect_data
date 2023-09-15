@@ -6,14 +6,19 @@
 - 추진배경 및 목표 : Streaming & Batch 금융 데이터를 한 곳에 모아 데이터 분석가를 위한 인사이트 제공
 - [<img src="https://img.shields.io/badge/REPORT-4285F4?style=flat&logo=googledocs&logoColor=white"/>](assets%2Ffinal_project_ppt.pdf)
 
-## ️팀원소개
+## ️Team member
    | 김수민                            | 김형준                    | 이수영                       | 조주혜                                     | 한기호                                 |
 |--------------------------------|------------------------|---------------------------|-----------------------------------------|-------------------------------------|
-| - 배치 파이프라인<br/>- 금융위원회| - 실시간 파이프라인<br/>- 암호화폐 | - 실시간 및 배치 파이프라인<br/>- 주식 | - 배치 파이프라인<br/> - 한국부동산원<br/> - 데이터 시각화 | - 배치 파이프라인<br/>- 한국은행<br/>- AWS 인프라 |
+| - 배치 파이프라인<br/>- 금융위원회| - 실시간 파이프라인<br/>- 암호화폐 | - 실시간 파이프라인<br/>- 배치 파이프라인<br/>- 주식 | - 배치 파이프라인<br/> - 한국부동산원<br/> - 데이터 시각화 | - 배치 파이프라인<br/>- 한국은행<br/>- AWS 인프라 |
 
-## 사용 데이터
 
+<br>
+
+## Usage data
 ![data_source.png](assets%2Fdata_source.png)
+
+<br>
+
 ## Main Tech Stack
 | Role          | Stack                                                                                                                                                                                                                                                                                                        |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -24,8 +29,18 @@
 | ETL Scheduler | <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat&logo=Apacheairflow&logoColor=white"/>                                                                                                                                                                                                       |
 | Streaming | <img src="https://img.shields.io/badge/Kafka-23F20?style=flat&logo=Apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white"/> <img src="https://img.shields.io/badge/AWS RDS-527FFF?style=flat&logo=Amazon RDS&logoColor=white"/>       |
 
-## 배치 처리 아키텍쳐
-![batch](https://github.com/dbt-finance/collect_data/assets/98998726/75533891-a8e7-440c-a917-caf60ca4a34b)
+<br>
+
+## Project Architecture
+![image](https://github.com/dbt-finance/collect_data/assets/54103240/8f2acad9-e83a-40e6-a99c-041463421da5)
+
+
+<br>
+
+## Batch Pipeline
+![image](https://github.com/dbt-finance/collect_data/assets/54103240/217263e6-3ba4-4bdf-a432-f9439dc2e745)
+
+
 
 - 1차 적재 : 데이터 소스로부터 MWAA를 통해 일정 시점에 데이터를 추출하여 S3 및 Redshift로 적재
 - 2차 가공 : EMR Spark을 통해 데이터 전처리 및 Redshift 통계 데이터 적재
@@ -39,8 +54,21 @@
 ### [ 부동산 데이터 ]
 ![real_estate.png](assets%2Freal_estate.png)
 
-## 실시간 처리 아키텍쳐
-![realtime](https://github.com/dbt-finance/collect_data/assets/98998726/57386470-0809-4a9e-8106-96ecdbb4cb44)
+<br>
+
+## Realtime Streaming Pipeline
+![image](https://github.com/dbt-finance/collect_data/assets/54103240/e10e555c-a57b-47eb-9e77-1dd3e632339c)
+
+
+1. 실시간 스트리밍 전송 서버
+   - FastAPI로 데이터 수집 및 변환
+   - Kafka로 topic 생성 및 전송
+2. 실시간 스트리밍 수신 서버
+   - Kafka로 데이터 수신
+   - 실시간으로 변동율 계산
+   - AWS RDS에 데이터 적재
+   - 임계값 기준 Slack alarm 
+<br>
 
 ## Producer Setting
 
