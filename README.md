@@ -47,7 +47,7 @@
 - 시각화 : Redshift에 적재된 데이터를 이용하여 시각화
 
 
-## 데이터 시각화 - AWS QuickSight
+## Batch data visualization - AWS QuickSight
 ### [ 경제 지표 데이터 ] 
 ![eco_indicator.png](assets%2Feco_indicator.png)
 ---
@@ -70,9 +70,25 @@
    - 임계값 기준 Slack alarm 
 <br>
 
+## Streaming Data result
+### Realtime Streaming
+![GIFMaker_me](https://github.com/dbt-finance/collect_data/assets/54103240/9986d1fa-e4bf-41b5-87b1-304f3fa8553d)
+
+
+### RDS load & Slack alarm
+암호화폐|국내주식|slack alarm|
+|------|---|---|
+|![image (4)](https://github.com/dbt-finance/collect_data/assets/54103240/aba928c0-5df7-4fb2-aaa2-b7eb01373f4f)|![image (5)](https://github.com/dbt-finance/collect_data/assets/54103240/02771dbc-1fa0-40ea-9570-44c1198ac150)|![스크린샷 2023-09-04 오후 1 51 38](https://github.com/dbt-finance/collect_data/assets/54103240/28d5c090-eef6-41b3-a707-d3a3124ef047)|
+
+
+
+
+<br>
+
+
 ## Producer Setting
 
-### 가상 환경 설정 및 활성화
+### Virtual environment settings & activation
 
 ```bash
 python3 -m venv venv
@@ -85,7 +101,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 환경 변수 설정
+### Environment variable settings
 
 - .env 파일을 작성하고 BOOTSTRAP_SERVERS 변수를 설정하세요.
     
@@ -94,7 +110,7 @@ pip install -r requirements.txt
     ```
     
 
-### 애플리케이션 실행
+### Application execution
 
 - Uvicorn, Hypercorn, Gunicorn 등을 사용하여 FastAPI 애플리케이션을 실행합니다.
     
